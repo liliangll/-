@@ -1,0 +1,14 @@
+http://kefu.sunyoo51.com/chat/customService?game=${game}&ver=${ver}&uid=${uid}&nickName=${nickName}
+
+
+game     优品记(固定值)
+
+ver      游戏版本号
+
+uid      UID
+
+nickName 游戏昵称
+
+
+
+所有的参数都需要urlencode，字符集UTF8

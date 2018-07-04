@@ -1,0 +1,12 @@
+1、微信分享 分享功能变成按钮的方法：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
+
+2、百度地图api
+
+地址http://lbsyun.baidu.com/jsdemo.htm#j1_3
+需要注册秘钥
+
+a、检索示例--圆形区域检索
+b、逆地址解析
+c、定位示例--浏览器定位（当前坐标）
+d、地图示例--缩放地图（14改成16）
+e、地图示例--获取两点间距离

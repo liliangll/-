@@ -1,0 +1,81 @@
+
+测试
+http://115.159.0.189/h5 移动端 （账号：13367833443，密码：123456）；
+
+http://115.159.0.189/seller 商户 （账号：13367833443，密码：123456）；
+
+http://115.159.0.189/admin 平台 （账号：admin，密码：123123）；
+
+http://115.159.0.189/supplier 厂端（账号：13367833443，密码：123456）；
+线上
+http://market.sunyoo51.com/h5 移动端 （账号：13367833443，密码：123456）；
+
+http://market.sunyoo51.com/seller 商户 （账号：13367833443，密码：123456）；
+
+http://market.sunyoo51.com/admin 平台 （账号：admin，密码：123123）；
+
+http://market.sunyoo51.com/supplier 厂端（账号：13367833443，密码：123456）；
+本地
+http://127.0.0.1:8081      admin
+http://127.0.0.1:8809      supplier
+http://127.0.0.1:8806      seller
+http://127.0.0.1:8808      h5
+
+                 	                                                                                                                                                  
+流量服务器		公网ip111.231.70.239
+			内网ip 10.154.205.44	
+ 			服务、端口		nginx：80
+mysql：31306
+tomcat：28478	
+			路径  数据库：/data/
+tomcat：/home/
+nginx：/usr/local/	ssh端口：6738
+		
+			账号密码	root
+密码：123456@qq
+	数据库公司登录帐号密码：root LL2468ss         
+数据库生产线帐号密码：root LS74289ws
+云尚测试服务器		公网ip115.159.0.189/h5	
+			内网ip10.105.227.110		
+			服务、端口 ssh端口：22
+ mysql:31306	
+			帐号：root 
+密码：Luckyboy888!@#
+	
+			数据库登录账号：yunshang
+云尚正式服务器		http://market.sunyoo51.com/h5		
+			mysql   端口3306 		
+			账号密码root 
+Shop888!
+	
+
+
+代理特性：
+1、结构：主商城---一级代理----二级代理
+2、玩法：代理分成，agrent_rate表，是代理才有分成，没开店，就没有分成。分成是公司从利润里面分，代码也提现了数据。
+3、代理们自己的店，价格都是相同的。
+4、表：member，字段：是代理：appid，是代理且开了店 isproxy，agent的userNum1一级代理数目、useNum2二级代理数目都是sql语句计算的，这两个字段是无效的。
+5、代理只能看上级代理的店铺，如果上级没有店铺，就看的是上级的上级的店铺，因为只有2级，所有这时候看的就是总商城了。
+6、游客可以看总商城的店铺
+7、seller一定是代理，但是代理不一定是seller（游戏来的，没开店）
+商城特性
+1、角色：admin、h5、seller、supplier（目前采购、商品都是由本公司做的，扮演admin、seller、supplier3种角色）
+2、入口：h5（游戏、浏览器）、微信
+3、支付方式：只有微信（wxpay、toh5pay、towxpay3种）
+4、采购和上架流程非常严格，需要优化（多端审核、多次insert和update，表多而且关联复杂）
+5、core 工具类；service-src/main/java-dto entity service vo；service-impl-src/main/java--dao model serviceImpl ；service --resources--shop--mapper
+6、分层：dao---model---service---controller---ftl文件
+7、acessFilter校验和处理了部分session、cookie信息
+8、游戏用户第一次过来，自动注册
+9、正式服--测试服--本地
+团购特性：
+1、团购商品表和product_type关联，可以crud
+2、团购订单无功能
+3、团购需求：产品见禅道，开发见团购流程.svg
+4、正式服已屏蔽团购
+
+合并支付： 购物车--支付界面--提交订单---insert order--支付完成 ----insert orderBound --支付回调结果、跳转
+
+微店主入驻：名字是电话，电话是member表的mobile
+
+
